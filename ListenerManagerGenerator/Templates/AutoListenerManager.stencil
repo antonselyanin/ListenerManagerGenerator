@@ -1,6 +1,6 @@
 import ListenerContainer
 {% for protocol in types.implementing.AutoListenerManageable %}
-class ExampleListenerManager: {{ protocol.name }} {
+class {{ protocol.name }}Manager: {{ protocol.name }} {
     private let container: ListenerContainer<{{ protocol.name }}> = ListenerContainer()
 
     func addListener(_ listener: {{ protocol.name }}) {

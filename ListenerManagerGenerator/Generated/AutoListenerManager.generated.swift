@@ -46,3 +46,40 @@ class ExampleListenerManager: ExampleListener {
     
 }
 
+class ServiceEventListenerManager: ServiceEventListener {
+    private let container: ListenerContainer<ServiceEventListener> = ListenerContainer()
+
+    func addListener(_ listener: ServiceEventListener) {
+        container.addListener(listener)
+    }
+
+    func removeListener(_ listener: ServiceEventListener) {
+        container.removeListener(listener)
+    }
+    
+    func connectionStateChanged(_ state: ServiceConnectionState) {
+        container.perform { listener in
+            listener.connectionStateChanged(state)
+        }
+    }
+    
+    func serviceEvent1(event1: ServiceEvent1) {
+        container.perform { listener in
+            listener.serviceEvent1(event1: event1)
+        }
+    }
+    
+    func serviceEvent2(event2: ServiceEvent2, additionalContext: ServiceContext) {
+        container.perform { listener in
+            listener.serviceEvent2(event2: event2, additionalContext: additionalContext)
+        }
+    }
+    
+    func serviceReset() {
+        container.perform { listener in
+            listener.serviceReset()
+        }
+    }
+    
+}
+

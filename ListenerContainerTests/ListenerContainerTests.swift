@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ListenerManager
+@testable import ListenerContainer
 
-class ListenerManagerTests: XCTestCase {
+class ListenerContainerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

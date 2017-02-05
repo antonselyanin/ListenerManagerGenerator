@@ -16,6 +16,7 @@
 		3A64B8361E47097E002FB60A /* ListenerContainer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A64B8201E47097D002FB60A /* ListenerContainer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A64B83E1E470E4B002FB60A /* ListenerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAC402AD202BD71620E41 /* ListenerContainer.swift */; };
 		3A64B8401E47142F002FB60A /* AutoListenerManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAE0B8607ABD2B7ADB050 /* AutoListenerManageable.swift */; };
+		3A64B8441E474AED002FB60A /* ServiceEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A64B8431E474AED002FB60A /* ServiceEventListener.swift */; };
 		58AAA2023E4A8430BC8AA8EC /* ExampleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAA2D4E6B338E2497DE7C /* ExampleListener.swift */; };
 		58AAA4652EE144AC0F0FFD36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AAA991EAF058E5E5EDF63E /* Assets.xcassets */; };
 		58AAA8237D1C1E6E5C486B40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AAA30352B0C8C1D678A23F /* LaunchScreen.storyboard */; };
@@ -75,6 +76,7 @@
 		3A64B8281E47097D002FB60A /* ListenerContainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListenerContainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A64B82F1E47097E002FB60A /* ListenerContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerContainerTests.swift; sourceTree = "<group>"; };
 		3A64B8311E47097E002FB60A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A64B8431E474AED002FB60A /* ServiceEventListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEventListener.swift; sourceTree = "<group>"; };
 		58AAA55E8AE84BCEB6236032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58AAA991EAF058E5E5EDF63E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58AAAA2D4E6B338E2497DE7C /* ExampleListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleListener.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				58AAAA2D4E6B338E2497DE7C /* ExampleListener.swift */,
 				3A64B8131E45CFDB002FB60A /* Info.plist */,
 				3A64B8091E45CFDB002FB60A /* ViewController.swift */,
+				3A64B8431E474AED002FB60A /* ServiceEventListener.swift */,
 			);
 			path = ListenerManagerGenerator;
 			sourceTree = "<group>";
@@ -168,7 +171,6 @@
 				3A64B8311E47097E002FB60A /* Info.plist */,
 				3A64B82F1E47097E002FB60A /* ListenerContainerTests.swift */,
 			);
-			name = ListenerContainerTests;
 			path = ListenerContainerTests;
 			sourceTree = "<group>";
 		};
@@ -419,6 +421,7 @@
 			files = (
 				3A64B80A1E45CFDB002FB60A /* ViewController.swift in Sources */,
 				3A64B8401E47142F002FB60A /* AutoListenerManageable.swift in Sources */,
+				3A64B8441E474AED002FB60A /* ServiceEventListener.swift in Sources */,
 				3A64B8081E45CFDB002FB60A /* AppDelegate.swift in Sources */,
 				58AAA2023E4A8430BC8AA8EC /* ExampleListener.swift in Sources */,
 				58AAAEC29746D33F8DF784F1 /* AutoListenerManager.generated.swift in Sources */,

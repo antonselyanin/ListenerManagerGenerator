@@ -8,7 +8,7 @@ import Foundation
 struct Event1 {}
 struct Event2 {}
 
-protocol ExampleListener: class, AnyObject, AutoListenerManageable {
+protocol ExampleListener: class, AutoListenerManageable {
     func notify1(event1: Event1)
 
     func notify2(event2: Event2)
