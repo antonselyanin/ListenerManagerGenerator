@@ -14,7 +14,7 @@ protocol ServiceEventListener: class {
 
     func serviceEvent1(event1: ServiceEvent1)
 
-    func serviceEvent2(event2: ServiceEvent2, additionalContext: Context)
+    func serviceEvent2(event2: ServiceEvent2, additionalContext: ServiceContext)
 
     func serviceReset()
 }
