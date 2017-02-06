@@ -6,28 +6,45 @@
 import Foundation
 
 public class ListenerContainer<Listener> {
-    private var listeners: [Listener] = []
+    private var listeners: [WeakBox<Listener>] = []
 
-    public init() {
-        
-    }
+    public init() {}
     
     public func addListener(_ listener: Listener) {
-        guard !listeners.contains(where: { identical($0, listener) }) else { return }
-        listeners.append(listener)
+        guard isUnique(listener) else { return }
+        
+        listeners.append(WeakBox(listener))
     }
 
     public func removeListener(_ listener: Listener) {
-        listeners = listeners.filter({ !identical($0, listener) })
+        listeners = listeners.filter({ weakRef in
+            guard let object = weakRef.object else { return false }
+            
+            return !identical(object, listener)
+        })
     }
     
-    public func perform(_ block: @escaping (Listener) -> Void) {
-        listeners.forEach(block)
+    public func forEach(_ block: @escaping (Listener) -> Void) {
+        fetchListeners().forEach(block)
+    }
+    
+    private func fetchListeners() -> [Listener] {
+        removeNilRef()
+        
+        return listeners.flatMap({ $0.object })
+    }
+    
+    private func isUnique(_ listener: Listener) -> Bool {
+        return !fetchListeners().contains(where: { identical($0, listener) })
+    }
+    
+    private func removeNilRef() {
+        listeners = listeners.filter({ $0.object != nil })
     }
 }
 
-// temp hack
 private func identical(_ lhs: Any, _ rhs: Any) -> Bool {
     return (lhs as AnyObject?) === (rhs as AnyObject?)
 }
+
 

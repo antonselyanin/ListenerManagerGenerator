@@ -42,25 +42,25 @@ class ServiceEventListenerManager: ServiceEventListener {
     }
     
     func connectionStateChanged(_ state: ServiceConnectionState) {
-        container.perform { listener in
+        container.forEach { listener in
             listener.connectionStateChanged(state)
         }
     }
     
     func serviceEvent1(event1: ServiceEvent1) {
-        container.perform { listener in
+        container.forEach { listener in
             listener.serviceEvent1(event1: event1)
         }
     }
     
     func serviceEvent2(event2: ServiceEvent2, additionalContext: ServiceContext) {
-        container.perform { listener in
+        container.forEach { listener in
             listener.serviceEvent2(event2: event2, additionalContext: additionalContext)
         }
     }
     
     func serviceReset() {
-        container.perform { listener in
+        container.forEach { listener in
             listener.serviceReset()
         }
     }

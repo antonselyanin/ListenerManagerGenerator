@@ -12,7 +12,7 @@ class {{ protocol.name }}Manager: {{ protocol.name }} {
     }
     {% for method in protocol.methods %}
     func {{ method.shortName }}({% for param in method.parameters %}{{ param.argumentLabel }}{% if param.argumentLabel != param.name %} {{ param.name }}{% endif %}: {{ param.typeName }}{% if not forloop.last %}, {% endif %}{% endfor %}) {
-        container.perform { listener in
+        container.forEach { listener in
             listener.{{ method.shortName }}({% for param in method.parameters %}{% if param.argumentLabel != "_" %}{{ param.argumentLabel }}: {% endif %}{{ param.name }}{% if not forloop.last %}, {% endif %}{% endfor %})
         }
     }
